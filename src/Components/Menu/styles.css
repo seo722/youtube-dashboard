@@ -1,0 +1,8 @@
+menu ul li.active a::before {
+  width: 20px;
+  transition: all 0.3s;
+}
+
+menu ul li.active a {
+  color: #b1147d;
+}
