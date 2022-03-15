@@ -24,6 +24,13 @@ export const InputBox = styled.div`
     font-size: 16px;
     padding: 0px 40px;
 
+    &:focus {
+      @media screen and (max-width: 525px) {
+        width: 320px;
+        transition: width 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
+      }
+    }
+
     &::placeholder {
       color: #757380;
     }
@@ -39,6 +46,11 @@ export const InputBox = styled.div`
     height: 45px;
     text-align: center;
     line-height: 45px;
+  }
+
+  @media screen and (max-width: 525px) {
+    width: 120px;
+    z-index: 101;
   }
 `;
 
@@ -76,6 +88,8 @@ export const ChevronIcon = styled.i`
   cursor: pointer;
   font-size: 12px;
   margin: 0px 20px;
+  transform: ${(props) => (props.mouseHere ? "rotate(180deg)" : null)};
+  transition: transform 0.3s;
 `;
 
 export const ProfileImg = styled.div`
@@ -108,7 +122,9 @@ export const MenuContainer = styled.div`
   width: 180px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 1;
-  transform: translateX(300px);
+  transform: ${(props) =>
+    props.mouseHere ? "translateX(0px)" : "translateX(250px)"};
+  transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
 
   &:after {
     position: absolute;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import {
   InputBox,
   Wrapper,
@@ -13,6 +13,18 @@ import { FaBell, FaChevronDown } from "react-icons/fa";
 import eve from "../../../img/eve.jpg";
 
 const TopContainer = () => {
+  const [mouseOn, setMouseOn] = useState(false);
+  const onMouseEnter = useCallback(() => {
+    setMouseOn((prev) => !prev);
+  }, [mouseOn, setMouseOn]);
+  const onMouseLeave = useCallback(() => {
+    setMouseOn(false);
+  }, [mouseOn, setMouseOn]);
+  const onClick = () => {
+    setMouseOn((prev) => !prev);
+    console.log(mouseOn);
+  };
+
   return (
     <Wrapper>
       <InputBox>
@@ -29,10 +41,15 @@ const TopContainer = () => {
           <img src={eve} alt="" />
         </ProfileImg>
         <ProfileName>Seo Park</ProfileName>
-        <ChevronIcon id="menuChevron">
+        <ChevronIcon
+          onClick={onClick}
+          // onMouseEnter={onMouseEnter}
+          // onMouseLeave={onMouseLeave}
+          mouseHere={mouseOn}
+        >
           <FaChevronDown />
         </ChevronIcon>
-        <MenuContainer id="menuContainer">
+        <MenuContainer mouseHere={mouseOn} id="menuContainer">
           <ul>
             <li>Web Design</li>
             <li>UI / UX</li>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Logo from "../../img/logo.png";
 import { LeftMenu, MainMenu, LastMenu } from "./styles";
 import {
@@ -13,25 +13,6 @@ import {
 import "./styles.css";
 
 const Menu = () => {
-  useEffect(() => {
-    const mainMenuLi = document
-      .getElementById("mainMenu")
-      .querySelectorAll("li");
-    const logo = document.querySelector("img");
-
-    function changeActive() {
-      mainMenuLi.forEach((n) => n.classList.remove("active"));
-      this.classList.add("active");
-    }
-
-    function logoClick() {
-      mainMenuLi.forEach((n) => n.classList.remove("active"));
-    }
-
-    logo.addEventListener("click", logoClick);
-    mainMenuLi?.forEach((n) => n.addEventListener("click", changeActive));
-  }, []);
-
   return (
     <LeftMenu>
       <img src={Logo} alt="" />
@@ -51,10 +32,25 @@ const Menu = () => {
   );
 };
 
-const Icon = ({ icon }) => (
-  <li>
-    <a href="#">{icon}</a>
-  </li>
-);
+const Icon = ({ icon, className }) => {
+  const [otherClassActive, setOtherClassActive] = useState(false);
+  const [classActive, setClassActive] = useState(false);
+  const onClick = () => {
+    if (!otherClassActive) {
+      setClassActive((prev) => !prev);
+    } else {
+      setOtherClassActive((prev) => !prev);
+    }
+  };
+  //이거 어케 하냐 ...?
+  return (
+    <li
+      onClick={onClick}
+      className={classActive && !otherClassActive ? "active" : ""}
+    >
+      <a href="#">{icon}</a>
+    </li>
+  );
+};
 
 export default Menu;
