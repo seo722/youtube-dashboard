@@ -5,6 +5,25 @@ export const Wrapper = styled.div`
   height: calc(100% - 45px);
   display: flex;
   padding-top: 15px;
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+`;
+
+export const MainDiv = styled.div`
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  //   main {
+  //     width: 100%;
+  //     display: grid;
+  //     grid-template-columns: repeat(3, 1fr);
+  //     margin: 50px;
 `;
 
 export const LeftContainer = styled.div`
@@ -70,7 +89,8 @@ export const BIDContainer = styled.div`
 
 export const Button1 = styled.a`
   text-decoration: none;
-  font-size: 14px;
+  font-size: ${(props) => (props.small ? "10px" : "14px")};
+  // font-size: 14px;
   color: #fff;
   font-weight: 600;
   background: linear-gradient(#ff21bc, #b21783);
@@ -110,8 +130,8 @@ export const Popular = styled.div`
 `;
 
 export const Button2 = styled.a`
+  font-size: ${(props) => (props.small ? "10px" : "14px")};
   text-decoration: none;
-  font-size: 14px;
   font-weight: bold;
   color: #d1d0d5;
   border: 2px solid #443b78;
@@ -124,4 +144,7 @@ export const Button2 = styled.a`
 //Right container
 export const RightContainer = styled.div`
   width: calc(100% - 70%);
+  padding: 0px 10px;
+  padding-left: 20px;
+  transition: all 0.3s cubic-bezier(0.17, 0.71, 0.38, 1.39);
 `;

@@ -11,8 +11,18 @@ import {
   Popular,
   Button2,
   Filters,
+  MainDiv,
 } from "./styles";
 import BannerPic from "../../../img/1.jpg";
+import CardMain from "../CardMain";
+import Card1 from "../../../img/card1.jpg";
+import Card2 from "../../../img/card2.jpg";
+import Card3 from "../../../img/card3.jpg";
+import Card4 from "../../../img/card4.jpg";
+import Card5 from "../../../img/card5.jpg";
+import Card6 from "../../../img/card6.jpg";
+import MainRightTop from "../MainRightTop.jsx";
+import MainRightBottom from "../MainRightBottom";
 
 const MainContainer = () => {
   return (
@@ -44,10 +54,24 @@ const MainContainer = () => {
               <Button2>Games</Button2>
             </div>
           </Filters>
-          <main></main>
+          <MainDiv>
+            <main>
+              <CardMain imgSrc={Card1} title={"CubicThunder"} hearts={"65"} />
+              <CardMain imgSrc={Card2} title={"Pokemon Ball"} hearts={"45"} />
+              <CardMain imgSrc={Card3} title={"Pyramid God"} hearts={"55"} />
+              <CardMain imgSrc={Card4} title={"Stunning Cube"} hearts={"75"} />
+              <CardMain imgSrc={Card5} title={"Star Crystal"} hearts={"35"} />
+              <CardMain imgSrc={Card6} title={"Crystal Bird"} hearts={"85"} />
+              <CardMain imgSrc={Card1} title={"CubicThunder"} hearts={"65"} />
+              <CardMain imgSrc={Card2} title={"Pokemon Ball"} hearts={"45"} />
+            </main>
+          </MainDiv>
         </Cards>
       </LeftContainer>
-      <RightContainer></RightContainer>
+      <RightContainer>
+        <MainRightTop></MainRightTop>
+        <MainRightBottom></MainRightBottom>
+      </RightContainer>
     </Wrapper>
   );
 };
