@@ -11,7 +11,15 @@ export const Card = styled.div`
   img {
     max-width: 100%;
     object-fit: cover;
-\  }
+  }
+
+  @media screen and (max-width: 525px) {
+    max-width: 350px;
+  }
+  @media screen and (min-width: 525px) and (max-width: 950px) {
+    max-width: 230px;
+    margin: 20px 5px;
+  }
 `;
 
 export const CardName = styled.div`

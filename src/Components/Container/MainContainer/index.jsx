@@ -12,9 +12,10 @@ import {
   Button2,
   Filters,
   MainDiv,
+  FilterButtons,
 } from "./styles";
-import BannerPic from "../../../img/1.jpg";
 import CardMain from "../CardMain";
+import BannerPic from "../../../img/1.jpg";
 import Card1 from "../../../img/card1.jpg";
 import Card2 from "../../../img/card2.jpg";
 import Card3 from "../../../img/card3.jpg";
@@ -47,12 +48,12 @@ const MainContainer = () => {
               <h2>Feed</h2>
               <Button2>Popular</Button2>
             </Popular>
-            <div>
+            <FilterButtons>
               <Button1>All</Button1>
               <Button2>Illustration</Button2>
               <Button2>Art</Button2>
               <Button2>Games</Button2>
-            </div>
+            </FilterButtons>
           </Filters>
           <MainDiv>
             <main>

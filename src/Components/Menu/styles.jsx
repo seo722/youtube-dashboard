@@ -8,6 +8,8 @@ export const LeftMenu = styled.menu`
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
 
   img {
     width: 3em;

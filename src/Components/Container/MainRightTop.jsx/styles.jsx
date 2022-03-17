@@ -11,7 +11,6 @@ export const TopCardName = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //   padding: 10px 20px;
 
   h2 {
     color: #d1d0d5;
@@ -47,5 +46,9 @@ export const Earning = styled.div`
         color: #b1147d;
       }
     }
+  }
+
+  @media screen and (min-width: 525px) and (max-width: 950px) {
+    padding: 0;
   }
 `;
